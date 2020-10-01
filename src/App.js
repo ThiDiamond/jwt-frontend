@@ -1,26 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useContext } from 'react';
+import LockIcon from './components/LockIcon';
+import AuthContext from './contexts/Auth';
+import Home from './pages/Home';
+import Login from './pages/Login';
 
-function App() {
+const App = () => {
+  const { isLogged } = useContext(AuthContext);
+  const Page = isLogged ? Home : Login;
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="shadow-lg p-3 mb-5 bg-white rounded text-center">
+      <form className="form-signin">
+        <LockIcon isOpened={isLogged} />
+        <Page />
+      </form>
     </div>
   );
-}
+};
 
 export default App;
