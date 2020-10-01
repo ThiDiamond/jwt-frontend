@@ -31,9 +31,9 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const auth = async () => {
       try {
-        await authenticate();
         const username = getUser();
-        setUser(username);
+        if (username) setUser(username);
+        await authenticate();
       } catch (error) {
         setUser(null);
       }

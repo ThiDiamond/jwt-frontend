@@ -25,7 +25,7 @@ export const authenticate = async () => {
 
     if (!token) throw Error('No token provided');
 
-    await api.get('private/authenticate');
+    await api.get('/authenticate');
   } catch (error) {
     throw Error('No token provided');
   }
