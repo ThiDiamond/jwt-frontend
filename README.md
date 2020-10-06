@@ -1,6 +1,6 @@
 # jwt-frontend
 
-Another application created for show some of my frontend skills.
+Another application created to show some of my frontend skills.
 This site is just a form containing one label. After submit the username field with any name, it redirects to the "unlocked" page, and will stay authenticated with json web token while it is valid.
 To remove the token from local storage, just click the "Sign out" button and be redirected again to "locked" page.
 
